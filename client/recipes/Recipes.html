@@ -1,3 +1,9 @@
 <template name='Recipes'>
     {{> NewRecipe}}
+    <section class="recipes">
+        <!-- Iterate the list of recipes -->
+        {{#each recipes}}
+            {{> Recipe}}
+        {{/each}}
+    </section>
 </template>
