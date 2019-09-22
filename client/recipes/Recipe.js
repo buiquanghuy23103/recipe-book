@@ -3,3 +3,10 @@ Template.Recipe.events({
         Meteor.call('toggleMenuItem', this._id, this.inMenu);
     }
 });
+
+Template.Recipe.helpers({
+    updateRecipeId: function () {
+        return this._id;
+    },
+    
+});
