@@ -2,6 +2,9 @@
     <h1 class="page-title">My Current Menu</h1>
     {{#each recipes}}
         {{> MenuItem}}
+        <!-- If there is no recipe, please do the following -->
+    {{else}}
+        <h3>Please add <a href="/recipe-book">recipes</a> to your menu</h3>
     {{/each}}
 </template>
 
