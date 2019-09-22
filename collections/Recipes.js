@@ -79,6 +79,10 @@ Meteor.methods({
         });
     },
 
+    deleteRecipe: (recipeId) => {
+        check(recipeId, String);
+        Recipes.remove(recipeId);
+    }
 });
 
 Recipes.attachSchema(RecipeSchema);

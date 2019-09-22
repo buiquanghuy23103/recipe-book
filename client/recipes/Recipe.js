@@ -4,6 +4,13 @@ Template.Recipe.events({
     }
 });
 
+Template.Recipe.events({
+    'click .fa-trash': function() {
+        Meteor.call('deleteRecipe', this._id);
+    }
+});
+
+
 Template.Recipe.helpers({
     updateRecipeId: function () {
         return this._id;
