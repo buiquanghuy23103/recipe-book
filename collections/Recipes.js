@@ -3,7 +3,12 @@ Recipes = new Mongo.Collection('recipes');
 Recipes.allow({
     insert: (userId, doc) => {
         return !!userId;
-    } // allow inserting after loggin in
+    }, // allow inserting after loggin in
+
+    update: (userId, doc) => {
+        return !!userId;
+    },
+
 });
 
 Ingredient = new SimpleSchema({
@@ -61,6 +66,17 @@ RecipeSchema = new SimpleSchema({
         autoform: {
             type: 'hidden',
         }
+    },
+
+});
+
+Meteor.methods({
+    toggleMenuItem: (recipeId, currentState) => {
+        Recipes.update(recipeId, {
+            $set: {
+                inMenu: !currentState,
+            }
+        });
     },
 
 });
