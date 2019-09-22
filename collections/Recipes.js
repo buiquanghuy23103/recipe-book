@@ -6,6 +6,16 @@ Recipes.allow({
     } // allow inserting after loggin in
 });
 
+Ingredient = new SimpleSchema({
+    name: {
+        type: String,
+    },
+
+    amount:{
+        type: String,
+    },
+});
+
 RecipeSchema = new SimpleSchema({
     name: {
         type: String,
@@ -38,6 +48,19 @@ RecipeSchema = new SimpleSchema({
         autoform: {
             type: 'hidden'
         },
+    },
+
+    ingredients: {
+        type: [Ingredient],
+    },
+
+    inMenu: {
+        type: Boolean,
+        defaultValue: false,
+        optional: true,
+        autoform: {
+            type: 'hidden',
+        }
     },
 
 });
