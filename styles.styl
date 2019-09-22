@@ -330,7 +330,7 @@ input, select, textarea
         margin-bottom 10px 
     button
         margin-top 20px 
-    .fa-trash
+    .fa-trash, .fa-pencil
         opacity 0.3
         cursor pointer
         position absolute
@@ -344,6 +344,11 @@ input, select, textarea
         &:hover
             color red 
             opacity 0.6
+    .fa-pencil
+        right 40px
+        &:hover
+            color teal
+
     .ingredient
         display inline-block
         margin-right 10px 
@@ -351,7 +356,7 @@ input, select, textarea
     &:hover 
         shadow-level(3)
         // animation card 0.6s ease 1 forwards
-
+    
 @keyframes card
     0%
         transform translate3d(0, 0, 0)
