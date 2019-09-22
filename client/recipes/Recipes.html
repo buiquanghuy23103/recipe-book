@@ -1,9 +1,14 @@
 <template name='Recipes'>
     {{> NewRecipe}}
+
     <section class="recipes">
-        <!-- Iterate the list of recipes -->
-        {{#each recipes}}
-            {{> Recipe}}
-        {{/each}}
+        {{#if Template.subscriptionsReady}}
+            <!-- Iterate the list of recipes -->
+            {{#each recipes}}
+                {{> Recipe}}
+            {{/each}}
+        {{else}}
+            <p>Loading</p>
+        {{/if}}
     </section>
 </template>
