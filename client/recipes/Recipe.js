@@ -1,4 +1,5 @@
 Template.Recipe.onCreated(function () {
+    // ReactiveVar scope to one object only
    this.editMode = new ReactiveVar(false);
 });
 

@@ -5,6 +5,12 @@ Template.Recipes.onCreated(function() {
     });
 });
 
+Template.Recipes.events({
+    'click .new-recipe': function () {
+        Session.set('openRecipeForm', true);
+    }
+});
+
 Template.Recipes.helpers({
     recipes: () => Recipes.find({}),
     
